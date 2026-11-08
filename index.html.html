@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#eee5d8">
+<title>Estephany Llabres | Student Portfolio</title>
+<style>
+:root{--bg:#f5f0e8;--paper:#fffdf9;--ink:#382f29;--muted:#82766b;--accent:#9b7860;--accent2:#c8ad94;--line:#e8ddd0;--soft:#eee5d8;--shadow:0 18px 50px rgba(74,54,39,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}button,input,textarea,select{font:inherit}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,91%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(245,240,232,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(210,194,176,.55)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-family:Georgia,serif;font-size:1.35rem;font-weight:bold;letter-spacing:.03em}.brand span{color:var(--accent)}nav{display:flex;gap:23px;align-items:center}nav a{font-size:.9rem;color:var(--muted);transition:.2s}nav a:hover,nav a.active{color:var(--ink)}.menu{display:none;border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:8px 11px;color:var(--ink)}
+.hero{padding:90px 0 78px;min-height:610px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:50px}.eyebrow{text-transform:uppercase;letter-spacing:.19em;font-size:.72rem;color:var(--accent);font-weight:700}.hero h1{font:clamp(3rem,7vw,5.7rem)/1.02 Georgia,serif;letter-spacing:-.045em;margin:18px 0}.hero h1 em{font-weight:400;color:var(--accent);display:block}.hero p{max-width:620px;color:var(--muted);font-size:1.05rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--accent);border-radius:999px;padding:11px 20px;background:var(--accent);color:white;font-weight:600;font-size:.9rem;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-2px);background:#80614c}.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}.hero-art{position:relative;min-height:390px;display:grid;place-items:center}.portrait{width:min(340px,80vw);aspect-ratio:4/5;border-radius:48% 48% 22px 22px;background:linear-gradient(145deg,#e7d8c6,#c7aa91);display:grid;place-items:center;box-shadow:var(--shadow);overflow:hidden;position:relative}.portrait:before{content:"";position:absolute;width:220px;height:220px;border:1px solid rgba(255,255,255,.65);border-radius:50%;top:35px}.portrait-inner{position:relative;text-align:center;color:#fffaf4}.portrait-inner strong{display:block;font:4.8rem Georgia,serif;letter-spacing:-.08em}.portrait-inner small{letter-spacing:.22em;text-transform:uppercase;font-size:.65rem}.floating-note{position:absolute;bottom:28px;left:0;background:var(--paper);padding:13px 17px;border-radius:14px;box-shadow:var(--shadow);font:italic 1rem Georgia,serif}.floating-note span{color:var(--accent)}
+section{padding:82px 0}.section-head{margin-bottom:34px}.section-head .eyebrow{margin-bottom:8px}.section-head h2{font:clamp(2.2rem,4vw,3.3rem)/1.1 Georgia,serif;margin:0}.section-head p{color:var(--muted);max-width:680px;margin:12px 0 0}.about-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:48px;align-items:start}.about-card{background:var(--soft);padding:30px;border-radius:22px;position:sticky;top:105px}.monogram{width:75px;height:75px;border-radius:50%;display:grid;place-items:center;background:#d8c3ad;color:#fff;font:2rem Georgia,serif;margin-bottom:20px}.about-card h3{font:1.5rem Georgia,serif;margin:0 0 8px}.about-card p{color:var(--muted);font-size:.92rem;margin:0}.about-copy p{color:#62574e;margin:0 0 17px}.about-copy strong{color:var(--ink)}
+.skills{background:#eee6dc}.skill-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.skill{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:21px 16px;min-height:135px}.skill .symbol{font:1.7rem Georgia,serif;color:var(--accent)}.skill h3{font-size:1rem;margin:9px 0 2px}.skill p{font-size:.78rem;color:var(--muted);margin:0}.skill-note{font-size:.85rem;color:var(--muted);margin-top:20px}
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.project{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:23px;display:flex;flex-direction:column;min-height:280px;box-shadow:0 7px 24px rgba(74,54,39,.035)}.project-top{display:flex;justify-content:space-between;align-items:center}.project-icon{width:48px;height:48px;border-radius:14px;background:var(--soft);display:grid;place-items:center;font-size:1.35rem}.tag{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700}.project h3{font:1.45rem Georgia,serif;margin:19px 0 8px}.project p{font-size:.88rem;color:var(--muted);margin:0 0 20px}.project button{margin-top:auto;align-self:flex-start}
+.education{background:#eee6dc}.timeline{max-width:780px;border-left:1px solid #cbb8a5;margin-left:9px;padding-left:28px}.edu{position:relative;padding:0 0 30px}.edu:last-child{padding-bottom:0}.edu:before{content:"";position:absolute;left:-34px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--accent);border:3px solid #eee6dc}.edu h3{margin:0;font:1.3rem Georgia,serif}.edu p{margin:4px 0 0;color:var(--muted);font-size:.9rem}.current{display:inline-block;margin-left:8px;background:#dfd0bf;color:#6e503c;border-radius:20px;padding:2px 9px;font:700 .65rem system-ui;text-transform:uppercase;letter-spacing:.06em}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}.contact-box{background:var(--soft);border-radius:22px;padding:28px}.contact-box h3{font:1.6rem Georgia,serif;margin:0 0 10px}.contact-box p{color:var(--muted)}.contact-link{display:inline-flex;gap:10px;align-items:center;margin-top:12px;color:var(--accent);font-weight:700;overflow-wrap:anywhere}.contact-form{display:grid;gap:12px}.contact-form input,.contact-form textarea{width:100%;border:1px solid var(--line);border-radius:12px;background:var(--paper);padding:12px 14px;outline:none;color:var(--ink)}.contact-form input:focus,.contact-form textarea:focus{border-color:var(--accent)}.contact-form textarea{min-height:115px;resize:vertical}.form-hint{font-size:.78rem;color:var(--muted);margin:0}
+footer{padding:25px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}.footer-row{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.modal{position:fixed;inset:0;background:rgba(35,28,23,.55);z-index:50;display:none;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modal-panel{width:min(720px,100%);max-height:90vh;overflow:auto;background:var(--paper);border-radius:22px;padding:25px;box-shadow:var(--shadow)}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:15px}.modal-head h3{font:1.7rem Georgia,serif;margin:0}.close{border:0;background:var(--soft);width:36px;height:36px;border-radius:50%;cursor:pointer;color:var(--ink)}.app-content{margin-top:18px}.app-row{display:flex;gap:9px;flex-wrap:wrap;margin:12px 0}.app-content input,.app-content select{min-width:0;flex:1;border:1px solid var(--line);background:white;padding:10px 12px;border-radius:10px;color:var(--ink)}.app-content button{border:0;background:var(--accent);color:white;padding:9px 14px;border-radius:10px;cursor:pointer}.app-content button.secondary{background:var(--soft);color:var(--ink)}.task-list{list-style:none;padding:0;margin:14px 0}.task-list li{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid var(--line)}.task-list label{display:flex;gap:9px;align-items:center;overflow-wrap:anywhere}.task-list .done{text-decoration:line-through;color:var(--muted)}.calc{max-width:330px}.calc-display{width:100%;font-size:1.7rem!important;text-align:right;margin-bottom:10px}.calc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.calc-grid button{font-size:1rem;padding:15px 5px}.calc-grid .wide{grid-column:span 2}.calendar-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:12px}.calendar-grid div{text-align:center;padding:9px 2px;border-radius:8px;font-size:.86rem}.calendar-grid .dayname{font-size:.7rem;color:var(--muted);font-weight:700}.calendar-grid .today{background:var(--accent);color:white}.calendar-grid .empty{visibility:hidden}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#382f29;color:white;padding:10px 16px;border-radius:999px;font-size:.85rem;opacity:0;pointer-events:none;transition:.25s;z-index:80}.toast.show{opacity:1}
+@media(max-width:800px){.hero{grid-template-columns:1fr;gap:10px;padding-top:65px}.hero-art{min-height:330px}.portrait{width:260px}.about-grid{grid-template-columns:1fr}.about-card{position:static}.skill-grid{grid-template-columns:repeat(3,1fr)}.project-grid{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.nav{height:65px}nav{display:none;position:absolute;top:65px;left:0;right:0;background:var(--paper);padding:16px 5%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:13px}nav.open{display:flex}.menu{display:block}.hero{min-height:auto;padding:60px 0 45px}.hero h1{font-size:3.3rem}.hero-art{min-height:300px}.portrait{width:230px}.floating-note{left:2%;bottom:12px}section{padding:62px 0}.skill-grid{grid-template-columns:repeat(2,1fr)}.project-grid{grid-template-columns:1fr}.footer-row{display:block}.footer-row span{display:block;margin:4px 0}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap nav">
+  <a class="brand" href="#home">E<span>.</span>L</a>
+  <nav id="navLinks">
+   <a href="#home" class="active">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+  </nav>
+  <button class="menu" id="menuBtn" aria-label="Toggle navigation">☰</button>
+ </div>
+</header>
+<main>
+<section class="wrap hero" id="home">
+ <div>
+  <div class="eyebrow">Hello and welcome to my portfolio</div>
+  <h1>I'm Estephany <em>Llabres.</em></h1>
+  <p>An Information Technology student exploring the world of programming, web development, and digital innovation. I'm still learning, building, and discovering what technology can make possible—one project at a time.</p>
+  <div class="actions"><a class="btn" href="#projects">Explore my projects ↗</a><a class="btn ghost" href="#about">Get to know me</a></div>
+ </div>
+ <div class="hero-art"><div class="portrait"><div class="portrait-inner"><strong>EL</strong><small>Student • Creator • Learner</small></div></div><div class="floating-note">Curious mind, <span>creative ideas.</span></div></div>
+</section>
+
+<section id="about">
+ <div class="wrap">
+  <div class="section-head"><div class="eyebrow">A little introduction</div><h2>About me</h2><p>Getting to know the student behind the code.</p></div>
+  <div class="about-grid">
+   <aside class="about-card"><div class="monogram">EL</div><h3>Learning with curiosity.</h3><p>BS Information Technology student at Computer Communication Development Institute. Interested in technology, programming, and creating useful digital experiences.</p></aside>
+   <div class="about-copy">
+    <p>I am an <strong>Information Technology student</strong> who is passionate about technology, continuous learning, and discovering new things. I consider myself a curious person who enjoys exploring different ideas, learning new skills, and understanding how things work, especially when it comes to technology. I love learning tech-related things, experimenting with different tools, and discovering how technology makes everyday life easier and more efficient.</p>
+    <p>One thing that keeps me interested in this field is how technology continues to evolve over time. I am always curious about its latest advancements, innovations, and possibilities. I enjoy keeping myself updated and learning about new developments because I believe that technology is a field where there is always something new to discover.</p>
+    <p>I chose Information Technology because I want to understand more about the digital world and how systems, applications, and technologies are developed. I am interested in <strong>programming, web development, system design,</strong> and other areas that allow me to turn ideas into something useful and functional. For me, IT is not just about computers or writing codes; it is also about creativity, problem-solving, innovation, and finding ways to make things better through technology.</p>
+    <p>My goal is to continuously improve my technical knowledge, develop my skills, and gain more experience in different areas of IT. I aspire to become a competent and knowledgeable IT professional who can create meaningful solutions, adapt to technological changes, and contribute something valuable to the digital world. I know that there is still a lot for me to learn, and I am willing to embrace every opportunity and challenge that will help me grow.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="skills" id="skills">
+ <div class="wrap">
+  <div class="section-head"><div class="eyebrow">What I'm learning</div><h2>Skills & technologies</h2><p>These are the tools and technologies I have started learning and practicing as an IT student. I am continuously working to improve my knowledge and confidence in each one.</p></div>
+  <div class="skill-grid">
+   <article class="skill"><div class="symbol">5</div><h3>HTML</h3><p>Building webpage structure</p></article>
+   <article class="skill"><div class="symbol">✳</div><h3>CSS</h3><p>Styling and responsive layouts</p></article>
+   <article class="skill"><div class="symbol">JS</div><h3>JavaScript</h3><p>Basic interactivity</p></article>
+   <article class="skill"><div class="symbol">₱</div><h3>PHP</h3><p>Learning server-side basics</p></article>
+   <article class="skill"><div class="symbol">▤</div><h3>MySQL</h3><p>Basic database management</p></article>
+  </div>
+  <p class="skill-note">Tools I have encountered: XAMPP and MySQL. My current skill level is beginner, and I am excited to keep practicing.</p>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="wrap">
+  <div class="section-head"><div class="eyebrow">Things I can build</div><h2>Featured projects</h2><p>These interactive mini-projects are included in this portfolio. Select a card to open and try each system—no extra folders or downloads needed.</p></div>
+  <div class="project-grid">
+   <article class="project"><div class="project-top"><div class="project-icon">▦</div><span class="tag">Mini system 01</span></div><h3>Personal Task Manager</h3><p>A simple productivity tool for adding tasks, marking completed work, and removing tasks. Tasks are saved in this browser.</p><button class="btn" onclick="openApp('tasks')">Open system ↗</button></article>
+   <article class="project"><div class="project-top"><div class="project-icon">＋</div><span class="tag">Mini system 02</span></div><h3>Scientific Calculator</h3><p>A browser-based calculator for everyday arithmetic, percentages, square roots, and basic scientific functions.</p><button class="btn" onclick="openApp('calculator')">Open system ↗</button></article>
+   <article class="project"><div class="project-top"><div class="project-icon">▣</div><span class="tag">Mini system 03</span></div><h3>Calendar Viewer</h3><p>A compact monthly calendar with month navigation and a highlight for today's date.</p><button class="btn" onclick="openApp('calendar')">Open system ↗</button></article>
+  </div>
+ </div>
+</section>
+
+<section class="education" id="education">
+ <div class="wrap">
+  <div class="section-head"><div class="eyebrow">My learning journey</div><h2>Education</h2><p>My academic background and current studies.</p></div>
+  <div class="timeline">
+   <div class="edu"><h3>Computer Communication Development Institute <span class="current">Currently studying</span></h3><p>Bachelor of Science in Information Technology · Third Year College</p></div>
+   <div class="edu"><h3>Anislag National High School</h3><p>Secondary Education</p></div>
+   <div class="edu"><h3>Anislag Elementary School</h3><p>Elementary Education</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="wrap">
+  <div class="section-head"><div class="eyebrow">Let's connect</div><h2>Contact me</h2><p>Thank you for visiting my portfolio. You can reach me through my email for school-related or professional inquiries.</p></div>
+  <div class="contact-grid">
+   <div class="contact-box"><h3>Have something to share?</h3><p>I am open to learning opportunities, collaboration, and conversations about technology and web development.</p><a class="contact-link" href="mailto:estephanyllabres157@gmail.com">✉ estephanyllabres157@gmail.com</a></div>
+   <form class="contact-form" id="contactForm"><input id="senderName" placeholder="Your name" required><input id="senderEmail" type="email" placeholder="Your email" required><textarea id="senderMessage" placeholder="Write your message..." required></textarea><button class="btn" type="submit">Prepare email ↗</button><p class="form-hint">This opens your email application with the message filled in. It does not send anything automatically.</p></form>
+  </div>
+ </div>
+</section>
+</main>
+<footer><div class="wrap footer-row"><span>© <span id="year"></span> Estephany Llabres. Student Portfolio.</span><span>Designed with curiosity & a love for learning.</span></div></footer>
+
+<div class="modal" id="appModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+ <div class="modal-panel"><div class="modal-head"><h3 id="modalTitle">Project</h3><button class="close" onclick="closeApp()" aria-label="Close">✕</button></div><div class="app-content" id="appContent"></div></div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const $=s=>document.querySelector(s);
+$('#year').textContent=new Date().getFullYear();
+$('#menuBtn').addEventListener('click',()=>$('#navLinks').classList.toggle('open'));
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>$('#navLinks').classList.remove('open')));
+const sections=[...document.querySelectorAll('main section[id]')];
+window.addEventListener('scroll',()=>{let current='home';sections.forEach(s=>{if(window.scrollY>=s.offsetTop-130)current=s.id});document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+current))});
+function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+function openApp(type){const modal=$('#appModal'),content=$('#appContent');modal.classList.add('show');document.body.style.overflow='hidden';if(type==='tasks')renderTasks();if(type==='calculator')renderCalculator();if(type==='calendar')renderCalendar(new Date().getFullYear(),new Date().getMonth())}
+function closeApp(){$('#appModal').classList.remove('show');document.body.style.overflow=''}
+$('#appModal').addEventListener('click',e=>{if(e.target.id==='appModal')closeApp()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeApp()});
+
+function renderTasks(){
+ $('#modalTitle').textContent='Personal Task Manager';
+ $('#appContent').innerHTML=`<p style="color:var(--muted);margin-top:0">Add a task, then check it off when it is done. Your list stays saved in this browser.</p><form class="app-row" id="taskForm"><input id="taskInput" placeholder="What do you need to do?" maxlength="100" required><button>Add task</button></form><div id="taskList"></div>`;
+ const get=()=>{try{return JSON.parse(localStorage.getItem('estephanyTasks')||'[]')}catch{return []}};
+ const save=items=>localStorage.setItem('estephanyTasks',JSON.stringify(items));
+ function draw(){const items=get();$('#taskList').innerHTML=items.length?`<ul class="task-list">${items.map((x,i)=>`<li><label><input type="checkbox" data-check="${i}" ${x.done?'checked':''}><span class="${x.done?'done':''}">${escapeHTML(x.text)}</span></label><button class="secondary" data-delete="${i}">Remove</button></li>`).join('')}</ul>`:'<p style="color:var(--muted)">No tasks yet. Add your first task above.</p>'}
+ $('#taskForm').addEventListener('submit',e=>{e.preventDefault();const input=$('#taskInput');const items=get();items.push({text:input.value.trim(),done:false});save(items);input.value='';draw()});
+ $('#taskList').addEventListener('change',e=>{if(e.target.dataset.check!==undefined){const items=get();items[+e.target.dataset.check].done=e.target.checked;save(items);draw()}});
+ $('#taskList').addEventListener('click',e=>{if(e.target.dataset.delete!==undefined){const items=get();items.splice(+e.target.dataset.delete,1);save(items);draw()}});
+ draw();
+}
+function renderCalculator(){
+ $('#modalTitle').textContent='Scientific Calculator';
+ $('#appContent').innerHTML=`<div class="calc"><input class="calc-display" id="calcDisplay" value="0" readonly aria-label="Calculator display"><div class="calc-grid">${['C','⌫','%','÷','7','8','9','×','4','5','6','−','1','2','3','+','±','0','.','='].map(k=>`<button class="${k==='='?'wide':''} ${['C','⌫','%','÷','×','−','+','±'].includes(k)?'secondary':''}" data-key="${k}">${k}</button>`).join('')}</div><div class="app-row"><button class="secondary" data-fn="sqrt">√ Square root</button><button class="secondary" data-fn="square">x² Square</button></div></div><p class="form-hint">Tip: use the buttons to enter an expression. Division by zero and invalid expressions are handled safely.</p>`;
+ let expr='';const display=$('#calcDisplay');const show=()=>display.value=expr||'0';
+ $('#appContent').addEventListener('click',e=>{const k=e.target.dataset.key,fn=e.target.dataset.fn;if(fn){const n=Number(expr);if(!expr||!Number.isFinite(n)){toast('Enter a valid number first');return}expr=String(fn==='sqrt'?Math.sqrt(n):n*n);show();return}if(!k)return;
+ if(k==='C')expr='';else if(k==='⌫')expr=expr.slice(0,-1);else if(k==='±'){if(expr)expr=expr.startsWith('-')?expr.slice(1):'-'+expr}else if(k==='='){try{let safe=expr.replace(/×/g,'*').replace(/÷/g,'/').replace(/−/g,'-');if(!/^[0-9.+*/%() -]+$/.test(safe))throw Error();let result=Function('"use strict";return ('+safe+')')();if(!Number.isFinite(result))throw Error();expr=String(Number(result.toFixed(10)))}catch{expr='';toast('Invalid calculation')}}else{const v=({'+':'+','−':'-','×':'*','÷':'/','%':'%'})[k]??k;expr+=v}show()});
+}
+function renderCalendar(year,month){
+ $('#modalTitle').textContent='Calendar Viewer';
+ const date=new Date(year,month,1),today=new Date();const first=date.getDay(),days=new Date(year,month+1,0).getDate();
+ let cells='';for(let i=0;i<first;i++)cells+='<div class="empty">0</div>';for(let d=1;d<=days;d++){const isToday=d===today.getDate()&&month===today.getMonth()&&year===today.getFullYear();cells+=`<div class="${isToday?'today':''}">${d}</div>`}
+ $('#appContent').innerHTML=`<div class="calendar-head"><button class="secondary" id="prevMonth">←</button><strong style="font:1.2rem Georgia,serif">${date.toLocaleString('en',{month:'long',year:'numeric'})}</strong><button class="secondary" id="nextMonth">→</button></div><div class="calendar-grid">${['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].map(x=>`<div class="dayname">${x}</div>`).join('')}${cells}</div><p class="form-hint">Today's date is highlighted. Use the arrows to browse other months.</p>`;
+ $('#prevMonth').onclick=()=>{const d=new Date(year,month-1,1);renderCalendar(d.getFullYear(),d.getMonth())};$('#nextMonth').onclick=()=>{const d=new Date(year,month+1,1);renderCalendar(d.getFullYear(),d.getMonth())};
+}
+function escapeHTML(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+$('#contactForm').addEventListener('submit',e=>{e.preventDefault();const name=$('#senderName').value.trim(),email=$('#senderEmail').value.trim(),message=$('#senderMessage').value.trim();const subject=encodeURIComponent('Portfolio inquiry from '+name);const body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\n'+message);window.location.href='mailto:estephanyllabres157@gmail.com?subject='+subject+'&body='+body});
+</script>
+</body>
+</html>
